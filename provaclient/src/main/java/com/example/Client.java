@@ -21,7 +21,19 @@ public class Client {
         pr.println("Eccomi");
         System.out.println(br.readLine()); // ricevo: Ciao come ti chiami?
         pr.println(tastiera.readLine()); // leggo da tastiera il nome e lo invio
-        System.out.println(br.readLine()); // ricevo: Salve {nome} sei l'utente connesso numero {x}
+        System.out.println(br.readLine()); // ricevo: Salve {nome} sei l'utente connesso numero {x} + i comandi disponibili
+        Boolean chatOn = true;
+        String inputStr;
+
+        do {
+            pr.println(tastiera.readLine());
+            inputStr = br.readLine();
+            if(inputStr.equals("chiuso")) {
+                chatOn = false;
+            } else {
+                System.out.println(inputStr);
+            }
+        } while(chatOn);
         s.close();
     }
 }
